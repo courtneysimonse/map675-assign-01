@@ -19,3 +19,7 @@
 *.shx
 *.qpj
 *.cpg
+
+# GeoPackages #
+##############
+*.gpkg
