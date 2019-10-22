@@ -17,7 +17,7 @@ I opened the geo-packages files in QGIS and saved them as shape files.
 
 ## Using GDAL with command line GIS
 ### Getting Information about the shapefiles
-* $ gdalinfo --version
+* $ gdalinfo --version<br>
 GDAL 2.4.1, released 2019/03/15
 
 * $ ogrinfo -so Top10NL_Spoorwegen.shp Top10NL_Spoorwegen
@@ -25,36 +25,36 @@ GDAL 2.4.1, released 2019/03/15
 INFO: Open of `Top10NL_Spoorwegen.shp'
       using driver `ESRI Shapefile' successful.
 
-Layer name: Top10NL_Spoorwegen
-Metadata:
-  DBF_DATE_LAST_UPDATE=2019-04-12
-Geometry: Line String
-Feature Count: 19752
-Extent: (30303.378000, 306978.314000) - (277195.394000, 609413.877062)
-Layer SRS WKT:
-PROJCS["Amersfoort / RD New",
-    GEOGCS["Amersfoort",
-        DATUM["Amersfoort",
-            SPHEROID["Bessel 1841",6377397.155,299.1528128,
-                AUTHORITY["EPSG","7004"]],
-            TOWGS84[565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812],
-            AUTHORITY["EPSG","6289"]],
-        PRIMEM["Greenwich",0,
-            AUTHORITY["EPSG","8901"]],
-        UNIT["degree",0.0174532925199433,
-            AUTHORITY["EPSG","9122"]],
-        AUTHORITY["EPSG","4289"]],
-    PROJECTION["Oblique_Stereographic"],
-    PARAMETER["latitude_of_origin",52.15616055555555],
-    PARAMETER["central_meridian",5.38763888888889],
-    PARAMETER["scale_factor",0.9999079],
-    PARAMETER["false_easting",155000],
-    PARAMETER["false_northing",463000],
-    UNIT["metre",1,
-        AUTHORITY["EPSG","9001"]],
-    AXIS["X",EAST],
-    AXIS["Y",NORTH],
-    AUTHORITY["EPSG","28992"]]
+Layer name: Top10NL_Spoorwegen<br>
+Metadata:<br>
+  DBF_DATE_LAST_UPDATE=2019-04-12<br>
+Geometry: Line String<br>
+Feature Count: 19752<br>
+Extent: (30303.378000, 306978.314000) - (277195.394000, 609413.877062)<br>
+Layer SRS WKT:<br>
+PROJCS["Amersfoort / RD New",<br>
+    GEOGCS["Amersfoort",<br>
+        DATUM["Amersfoort",<br>
+            SPHEROID["Bessel 1841",6377397.155,299.1528128,<br>
+                AUTHORITY["EPSG","7004"]],<br>
+            TOWGS84[565.2369,50.0087,465.658,-0.406857,0.350733,<br>-1.87035,4.0812],<br>
+            AUTHORITY["EPSG","6289"]],<br>
+        PRIMEM["Greenwich",0,<br>
+            AUTHORITY["EPSG","8901"]],<br>
+        UNIT["degree",0.0174532925199433,<br>
+            AUTHORITY["EPSG","9122"]],<br>
+        AUTHORITY["EPSG","4289"]],<br>
+    PROJECTION["Oblique_Stereographic"],<br>
+    PARAMETER["latitude_of_origin",52.15616055555555],<br>
+    PARAMETER["central_meridian",5.38763888888889],<br>
+    PARAMETER["scale_factor",0.9999079],<br>
+    PARAMETER["false_easting",155000],<br>
+    PARAMETER["false_northing",463000],<br>
+    UNIT["metre",1,<br>
+        AUTHORITY["EPSG","9001"]],<br>
+    AXIS["X",EAST],<br>
+    AXIS["Y",NORTH],<br>
+    AUTHORITY["EPSG","28992"]]<br>
 ogc_fid: Integer64 (10.0)
 gml_id: String (254.0)
 namespace: String (250.0)
@@ -85,28 +85,28 @@ baanvaknaa: String (250.0)
 geometrie_: String (254.0)
 
 ### Performing projection and transformations with ogr2ogr
-$ ogr2ogr spoorwegen.shp -t_srs "EPSG:4326" Top10NL_Spoorwegen.shp
-$ ogrinfo -so spoorwegen.shp spoorwegen
-INFO: Open of `spoorwegen.shp'
-      using driver `ESRI Shapefile' successful.
+$ ogr2ogr spoorwegen.shp -t_srs "EPSG:4326" Top10NL_Spoorwegen.shp<br>
+$ ogrinfo -so spoorwegen.shp spoorwegen<br>
+INFO: Open of `spoorwegen.shp'<br>
+      using driver `ESRI Shapefile' successful.<br>
 
-Layer name: spoorwegen
-Metadata:
-  DBF_DATE_LAST_UPDATE=2019-10-22
-Geometry: Line String
-Feature Count: 19752
-Extent: (3.592947, 50.752341) - (7.215403, 53.462471)
-Layer SRS WKT:
-GEOGCS["WGS 84",
-    DATUM["WGS_1984",
-        SPHEROID["WGS 84",6378137,298.257223563,
-            AUTHORITY["EPSG","7030"]],
-        AUTHORITY["EPSG","6326"]],
-    PRIMEM["Greenwich",0,
-        AUTHORITY["EPSG","8901"]],
-    UNIT["degree",0.0174532925199433,
-        AUTHORITY["EPSG","9122"]],
-    AUTHORITY["EPSG","4326"]]
+Layer name: spoorwegen<br>
+Metadata:<br>
+  DBF_DATE_LAST_UPDATE=2019-10-22<br>
+Geometry: Line String<br>
+Feature Count: 19752<br>
+Extent: (3.592947, 50.752341) - (7.215403, 53.462471)<br>
+Layer SRS WKT:<br>
+GEOGCS["WGS 84",<br>
+    DATUM["WGS_1984",<br>
+        SPHEROID["WGS 84",6378137,298.257223563,<br>
+            AUTHORITY["EPSG","7030"]],<br>
+        AUTHORITY["EPSG","6326"]],<br>
+    PRIMEM["Greenwich",0,<br>
+        AUTHORITY["EPSG","8901"]],<br>
+    UNIT["degree",0.0174532925199433,<br>
+        AUTHORITY["EPSG","9122"]],<br>
+    AUTHORITY["EPSG","4326"]]<br>
 ogc_fid: Integer64 (10.0)
 gml_id: String (254.0)
 namespace: String (250.0)
