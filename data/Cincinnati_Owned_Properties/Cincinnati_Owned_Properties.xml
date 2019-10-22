@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?><MD_Metadata xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:xalan="http://xml.apache.org/xalan" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.isotc211.org/2005/gmd">
+    <fileIdentifier>
+        <gco:CharacterString>69ed545ab456435496c3d52db13f06af</gco:CharacterString>
+    </fileIdentifier>
+    <characterSet>
+        <MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
+    </characterSet>
+    <hierarchyLevel>
+        <MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" codeSpace="ISOTC211/19115">dataset</MD_ScopeCode>
+    </hierarchyLevel>
+    <hierarchyLevelName>
+        <gco:CharacterString>dataset</gco:CharacterString>
+    </hierarchyLevelName>
+    <contact>
+        <CI_ResponsibleParty>
+            <role>
+                <CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact" codeSpace="ISOTC211/19115">pointOfContact</CI_RoleCode>
+            </role>
+        </CI_ResponsibleParty>
+    </contact>
+    <dateStamp>
+        <gco:Date>2018-03-01</gco:Date>
+    </dateStamp>
+    <metadataStandardName>
+        <gco:CharacterString>ISO 19139 Geographic Information - Metadata - Implementation Specification</gco:CharacterString>
+    </metadataStandardName>
+    <metadataStandardVersion>
+        <gco:CharacterString>2007</gco:CharacterString>
+    </metadataStandardVersion>
+    <identificationInfo>
+        <MD_DataIdentification>
+            <citation>
+                <CI_Citation>
+                    <title>
+                        <gco:CharacterString>Cincinnati Owned Properties</gco:CharacterString>
+                    </title>
+                    <date gco:nilReason="missing"/>
+                </CI_Citation>
+            </citation>
+            <abstract>
+                <gco:CharacterString>The Cincinnati Owned Properties layer displays all properties owned or leased by the City of Cincinnati throughout Hamilton County:- Cincinnati Trade and Development- Cincinnati Fire Department- City manager Office- Cincinnati Parks- Cincinnati Police- Cincinnati Recreation Commission- Cincinnati DOTE (Department Of Transportation and Engineering)- Cincinnati Board of Education- Greater Cincinnati Water Works- Cincinnati Health- Metropolitan Sewer District- Cincinnati Public Services- State of OhioThe layer isn't displayed when zoomed out beyond 1:20,000.</gco:CharacterString>
+            </abstract>
+            <purpose>
+                <gco:CharacterString>Cincinnati Owned Property</gco:CharacterString>
+            </purpose>
+            <credit>
+                <gco:CharacterString>Property Management/Real Estate Division of the Cincinnati Law Department.
+
+801 Plum St Room # 214
+
+(513) 352-3610
+
+The Property Management Section is responsible for the inventory, management, and disposal of all City-owned or City-leased real property. Property Management is also responsible for issuing Revocable Street Privileges and the payment of all City Real Estate Tax bills.</gco:CharacterString>
+            </credit>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>Cincinnati</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Housing</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Property</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>Cincinnati</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Housing</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Property</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>Cincinnati</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Housing</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Property</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>Cincinnati</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Housing</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Property</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>Cincinnati</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Housing</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Property</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>Cincinnati</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City Owned</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>City</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Housing</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>Property</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <resourceConstraints>
+                <MD_Constraints>
+                    <useLimitation>
+                        <gco:CharacterString>The provider makes no
+warranty or representation, either expressed or implied with respect to this
+information, its quality, performance, merchantability, or fitness a particular
+purpose. As a result this information is provided 'as is' and you, the requester,
+are assuming the entire risk as to its quality and performance. In no event
+will the provider be liable for direct, indirect, incidental, or consequential
+damages resulting from any defect in the information, even if advised of the
+possibility of such damages. In particular, the provider shall have no
+liability for any other information, programs or data used with or combined
+with the requested information, including the cost of recovering such
+information, programs or data.</gco:CharacterString>
+                    </useLimitation>
+                </MD_Constraints>
+            </resourceConstraints>
+            <language gco:nilReason="missing"/>
+            <characterSet>
+                <MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
+            </characterSet>
+        </MD_DataIdentification>
+    </identificationInfo>
+    <distributionInfo>
+        <MD_Distribution>
+            <transferOptions>
+                <MD_DigitalTransferOptions/>
+            </transferOptions>
+        </MD_Distribution>
+    </distributionInfo>
+</MD_Metadata>
