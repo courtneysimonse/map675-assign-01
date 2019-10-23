@@ -65,15 +65,19 @@
       // ).addTo(map);
 
       $.when(
-        $.getJSON("data/city-limits.json"),
-        $.getJSON("data/neighborhoods-filtered3.json"),
-        $.getJSON("data/transit-routes-simple.json"),
-        $.getJSON("data/atlanta-urban.json")
+        $.getJSON("data/stations.json"),
+        $.getJSON("data/landgrens.json"),
+        $.getJSON("data/kustlijn.json"),
+        $.getJSON("data/gemeentegrens.json"),
+        $.getJSON("data/provinciegrens.json"),
+        $.getJSON("data/Spoorwegen.json")
       ).done(function(
-        cityLimitsData,
-        neighborhoodsData,
-        transitRoutesData,
-        urbanAreasData
+        stationsData,
+        landData,
+        coastlineData,
+        borderData,
+        provinceData,
+        railwaysData
       ) {
         //  note that we can access the GeoJSON data here
         // console.log(cityLimits);
