@@ -46,11 +46,11 @@
     <script>
       // JavaScript goes here
       const options = {
-        center: [33.726, -84.365],
-        zoom: 9,
-        minZoom: 9,
-        maxZoom: 16,
-        maxBounds: [[33.911, -84.032], [33.62, -84.772]]
+        center: [52, 4.9],
+        zoom: 7,
+        minZoom: 6,
+        maxZoom: 16
+        // maxBounds: [[33.911, -84.032], [33.62, -84.772]]
       };
       const map = L.map("map", options);
 
@@ -65,111 +65,117 @@
       // ).addTo(map);
 
       $.when(
-        $.getJSON("data/city-limits.json"),
-        $.getJSON("data/neighborhoods-filtered3.json"),
-        $.getJSON("data/transit-routes-simple.json"),
-        $.getJSON("data/atlanta-urban.json")
+        $.getJSON("data/stations.json"),
+        $.getJSON("data/landgrens.json"),
+        $.getJSON("data/kustlijn.json"),
+        $.getJSON("data/gemeentegrens.json"),
+        $.getJSON("data/provinciegrens.json"),
+        $.getJSON("data/Spoorwegen.json")
       ).done(function(
-        cityLimitsData,
-        neighborhoodsData,
-        transitRoutesData,
-        urbanAreasData
+        stationsData,
+        landData,
+        coastlineData,
+        borderData,
+        provinceData,
+        railwaysData
       ) {
         //  note that we can access the GeoJSON data here
-        // console.log(cityLimits);
-        // L.geoJson(cityLimitsData).addTo(map);
-        // L.geoJson(neighborhoodsData).addTo(map);
-        // L.geoJson(transitRoutesData).addTo(map);
-        // L.geoJson(urbanAreasData).addTo(map);
+        // console.log(stationsData);
+        L.geoJson(stationsData).addTo(map);
+        L.geoJson(landData).addTo(map);
+        L.geoJson(coastlineData).addTo(map);
+        L.geoJson(borderData).addTo(map);
+        L.geoJson(provinceData).addTo(map);
+        L.geoJson(railwaysData).addTo(map);
 
-        const urbanOptions = {
-          color: "#295b97",
-          weight: 0
-        };
-
-        const cityLimitsOptions = {
-          fillOpacity: 0,
-          color: "#040d18",
-          opacity: 1,
-          weight: 3
-        };
-
-        const neighborhoodOptions = {
-          fillOpacity: 0.3,
-          fillColor: "#e0ecf9",
-          color: "#151f2b",
-          weight: 1.7,
-          opacity: 1
-        };
-
-        const subwayOptions = {
-          color: "#ff6e00",
-          weight: 2,
-          opacity: 1
-        };
-
-        const busOptions = {
-          color: "#f0f062",
-          weight: 0.1,
-          opacity: 1
-        };
-
-        const tramOptions = {
-          color: "#ff6e00",
-          weight: 2
-        };
-
-        const otherRoutes = {
-          color: "#ff6e00"
-        };
-
-        L.geoJson(urbanAreasData, {
-          style: urbanOptions
-        }).addTo(map);
-
-        L.geoJson(cityLimitsData, {
-          style: cityLimitsOptions
-        }).addTo(map);
-
-        L.geoJson(neighborhoodsData, {
-          style: neighborhoodOptions,
-          onEachFeature: function(feature, layer) {
-            // shortut to variable
-            let tooltip = feature.properties.NAME;
-            // bind the tooltip to the layer
-            layer.bindTooltip(tooltip, {
-              sticky: true,
-              className: "tooltip"
-            });
-            // visual affordance on mouseover
-            layer.on("mouseover", function(e) {
-              this.setStyle({
-                fillOpacity: 0.1
-              });
-            });
-            // use existing option to reset the styles on mouseout
-            layer.on("mouseout", function(e) {
-              this.setStyle(neighborhoodOptions);
-            });
-          }
-        }).addTo(map);
-
-        L.geoJson(transitRoutesData, {
-          // style each feature
-          style: function(feature) {
-            // shortcut to variable
-            let type = feature.properties.rte_type;
-
-            // assign options
-            return type === "subway, metro"
-              ? subwayOptions
-              : type === "bus"
-              ? busOptions
-              : type === "tram, light rail, streetcar"
-              ? tramOptions
-              : otherRoutes;
-          }
-        }).addTo(map);
+        // const urbanOptions = {
+        //   color: "#295b97",
+        //   weight: 0
+        // };
+        //
+        // const cityLimitsOptions = {
+        //   fillOpacity: 0,
+        //   color: "#040d18",
+        //   opacity: 1,
+        //   weight: 3
+        // };
+        //
+        // const neighborhoodOptions = {
+        //   fillOpacity: 0.3,
+        //   fillColor: "#e0ecf9",
+        //   color: "#151f2b",
+        //   weight: 1.7,
+        //   opacity: 1
+        // };
+        //
+        // const subwayOptions = {
+        //   color: "#ff6e00",
+        //   weight: 2,
+        //   opacity: 1
+        // };
+        //
+        // const busOptions = {
+        //   color: "#f0f062",
+        //   weight: 0.1,
+        //   opacity: 1
+        // };
+        //
+        // const tramOptions = {
+        //   color: "#ff6e00",
+        //   weight: 2
+        // };
+        //
+        // const otherRoutes = {
+        //   color: "#ff6e00"
+        // };
+        //
+        // L.geoJson(urbanAreasData, {
+        //   style: urbanOptions
+        // }).addTo(map);
+        //
+        // L.geoJson(cityLimitsData, {
+        //   style: cityLimitsOptions
+        // }).addTo(map);
+        //
+        // L.geoJson(neighborhoodsData, {
+        //   style: neighborhoodOptions,
+        //   onEachFeature: function(feature, layer) {
+        //     // shortut to variable
+        //     let tooltip = feature.properties.NAME;
+        //     // bind the tooltip to the layer
+        //     layer.bindTooltip(tooltip, {
+        //       sticky: true,
+        //       className: "tooltip"
+        //     });
+        //     // visual affordance on mouseover
+        //     layer.on("mouseover", function(e) {
+        //       this.setStyle({
+        //         fillOpacity: 0.1
+        //       });
+        //     });
+        //     // use existing option to reset the styles on mouseout
+        //     layer.on("mouseout", function(e) {
+        //       this.setStyle(neighborhoodOptions);
+        //     });
+        //   }
+        // }).addTo(map);
+        //
+        // L.geoJson(transitRoutesData, {
+        //   // style each feature
+        //   style: function(feature) {
+        //     // shortcut to variable
+        //     let type = feature.properties.rte_type;
+        //
+        //     // assign options
+        //     return type === "subway, metro"
+        //       ? subwayOptions
+        //       : type === "bus"
+        //       ? busOptions
+        //       : type === "tram, light rail, streetcar"
+        //       ? tramOptions
+        //       : otherRoutes;
+        //   }
+        // }).addTo(map);
 
         map.createPane("labels");
         map.getPane("labels").style.zIndex = 650;
