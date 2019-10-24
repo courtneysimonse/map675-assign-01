@@ -145,6 +145,13 @@ Test integrity of the output Spoorwegen.json in geojson.io
 
 I followed the same procedure for the other five shapefiles.
 
+### Simplify Railways File
+After using mapshaper, the railways-simplified.json file was still 16 MB.
+In order to decrease the size further, we removed all the properties except "gml_id". 
+```shell
+>ogr2ogr -f "GeoJSON" -select gml_id data\railways-simplified1.json data\railways-simplified.json
+```
+
 ### Courtney's Data Process
 Cincinnati-owned Properties  
 The Cincinnati Owned Properties layer displays all properties owned or leased by the City of Cincinnati throughout Hamilton County:
