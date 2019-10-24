@@ -47,10 +47,10 @@
       // JavaScript goes here
       const options = {
         center: [52, 4.9],
-        zoom: 7,
+        zoom: 8,
         minZoom: 6,
-        maxZoom: 16
-        // maxBounds: [[33.911, -84.032], [33.62, -84.772]]
+        maxZoom: 14,
+        maxBounds: [[53.5, 7.52], [50.73, 3.15]]
       };
       const map = L.map("map", options);
 
@@ -66,6 +66,7 @@
         // $.getJSON("data/gemeentegrens.json"),
         $.getJSON("data/provinciegrens.json"),
         $.getJSON("data/railways-simplified1.json")  //simplified with mapshaper
+        //$.getJSON("data/railways.json")  //simplified with mapshaper
       ).done(function(
         stationsData,
         // landData,
@@ -80,7 +81,7 @@
         // L.geoJson(landData).addTo(map);
         // L.geoJson(coastlineData).addTo(map);
         // L.geoJson(borderData).addTo(map);
-        // L.geoJson(provinceData).addTo(map);
+        // L.geoJson(provinceDta).addTo(map);
         // L.geoJson(railwaysData).addTo(map);
 
         const stationsOptions = {
@@ -108,12 +109,37 @@
         }).addTo(map);
 
         L.geoJson(provinceData, {
-          style: provinceOptions
+          style: provinceOptions,
+          onEachFeature: function(feature, layer) {
+            // shortut to variable
+            let tooltip = feature.properties.provincien;
+            // bind the tooltip to the layer
+            layer.bindTooltip(tooltip, {
+              sticky: true,
+              className: "tooltip"
+            });
+            // visual affordance on mouseover
+            layer.on("mouseover", function(e) {
+              this.setStyle({
+                fillOpacity: 0.1
+              });
+            });
+            // use existing option to reset the styles on mouseout
+            layer.on("mouseout", function(e) {
+              this.setStyle(provinceOptions);
+            });
+          }
         }).addTo(map);
+
+        // L.geoJson(provinceData, {
+        //   style: provinceOptions
+        // }).addTo(map);
 
         L.geoJson(railwaysData, {
           style: railwaysOptions
         }).addTo(map);
+
+
 
         // map.createPane("labels");
         // map.getPane("labels").style.zIndex = 650;
