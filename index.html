@@ -65,8 +65,8 @@
         // $.getJSON("data/kustlijn.json"),
         // $.getJSON("data/gemeentegrens.json"),
         $.getJSON("data/provinciegrens.json"),
-        $.getJSON("data/railways-simplified1.json")  //simplified with mapshaper
-        //$.getJSON("data/railways.json")  //simplified with mapshaper
+        //$.getJSON("data/railways-simplified1.json")  //simplified with mapshaper
+        $.getJSON("data/railways.json")  //simplified with mapshaper
       ).done(function(
         stationsData,
         // landData,
@@ -96,12 +96,34 @@
           weight: 1
         }
 
-        const railwaysOptions = {
-          color: "red",
+        // const railwaysOptions = {
+        //   color: "red",
+        //   weight: 2
+        //
+        // }
+//===
+        const treinOptions = {
+          color:  "#ff3333",
+          weight: 2,
+          opacity: 1
+        };
+
+        const tramOptions = {
+          color: "#cc0000",
+          weight: 1,
+          opacity: 1
+        };
+
+        const metroOptions = {
+          color: "#cc0000",
+          weight: 1
+        };
+
+        const otherRoutes = {
+          color: "#cc0000",
           weight: 2
-
-        }
-
+        };
+//===
         L.geoJson(stationsData, {
           pointToLayer: function(point, latlng) {
               return L.marker(latlng, stationsOptions);
@@ -135,11 +157,25 @@
         //   style: provinceOptions
         // }).addTo(map);
 
+        // L.geoJson(railwaysData, {
+        //   style: railwaysOptions
+        // }).addTo(map);
+
         L.geoJson(railwaysData, {
-          style: railwaysOptions
-        }).addTo(map);
-
-
+           // style each feature
+           style: function(feature) {
+             // shortcut to variable
+             let type = feature.properties.typespoorb;
+             // assign options
+             return type === "trein"
+               ? treinOptions
+               : type === "tram, sneltram"
+               ? tramOptions
+               : type === "metro"
+               ? metroOptions
+               : otherRoutes;
+           }
+         }).addTo(map);
 
         // map.createPane("labels");
         // map.getPane("labels").style.zIndex = 650;
