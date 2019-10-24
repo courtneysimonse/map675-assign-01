@@ -22,7 +22,7 @@
         bottom: 0;
         margin: 0;
         padding: 0;
-        background: rgba(0, 0, 0, 0.75);
+        background: "white";
       }
       .tooltip {
         color: white;
@@ -54,21 +54,21 @@
       };
       const map = L.map("map", options);
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      	maxZoom: 19,
-      	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
+      // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      // 	maxZoom: 19,
+      // 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      // }).addTo(map);
 
       $.when(
         $.getJSON("data/stations.json"),
-        $.getJSON("data/landgrens.json"),
+        // $.getJSON("data/landgrens.json"),
         // $.getJSON("data/kustlijn.json"),
         // $.getJSON("data/gemeentegrens.json"),
         $.getJSON("data/provinciegrens.json"),
-        $.getJSON("data/Spoorwegen.json")
+        $.getJSON("data/railways-simplified.json")  //simplified with mapshaper
       ).done(function(
         stationsData,
-        landData,
+        // landData,
         // coastlineData,
         // borderData,
         provinceData,
@@ -77,11 +77,11 @@
         //  note that we can access the GeoJSON data here
         // console.log(stationsData);
         // L.geoJson(stationsData).addTo(map);
-        L.geoJson(landData).addTo(map);
+        // L.geoJson(landData).addTo(map);
         // L.geoJson(coastlineData).addTo(map);
         // L.geoJson(borderData).addTo(map);
-        L.geoJson(provinceData).addTo(map);
-        L.geoJson(railwaysData).addTo(map);
+        // L.geoJson(provinceData).addTo(map);
+        // L.geoJson(railwaysData).addTo(map);
 
         const stationsOptions = {
           icon: L.icon({
@@ -89,10 +89,30 @@
           })
         };
 
+        const provinceOptions = {
+          color: "brown",
+          fillOpacity: .2,
+          weight: 1
+        }
+
+        const railwaysOptions = {
+          color: "red",
+          weight: 2
+
+        }
+
         L.geoJson(stationsData, {
           pointToLayer: function(point, latlng) {
               return L.marker(latlng, stationsOptions);
               }
+        }).addTo(map);
+
+        L.geoJson(provinceData, {
+          style: provinceOptions
+        }).addTo(map);
+
+        L.geoJson(railwaysData, {
+          style: railwaysOptions
         }).addTo(map);
 
         // map.createPane("labels");
