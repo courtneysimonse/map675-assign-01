@@ -13,14 +13,15 @@ Downloaded files: (Shapefiles and geo-packages)
   5. Top10NL_Spoorwegen.shp
   6. Top10NL_Inricht_el_station.shp
 
-I opened the geo-packages files in QGIS and saved them as shape files.
+I opened the geo-packages files in QGIS and saved them as shapefiles.
 
 ## Using GDAL with command line GIS
 ### Getting Information about the shapefiles
-* $ gdalinfo --version<br>
+```shell
+$ gdalinfo --version<br>
 GDAL 2.4.1, released 2019/03/15
 
-* $ ogrinfo -so Top10NL_Spoorwegen.shp Top10NL_Spoorwegen
+$ ogrinfo -so Top10NL_Spoorwegen.shp Top10NL_Spoorwegen
 
 INFO: Open of `Top10NL_Spoorwegen.shp'
       using driver `ESRI Shapefile' successful.
@@ -83,8 +84,10 @@ brugnaam: String (250.0)
 tunnelnaam: String (250.0)
 baanvaknaa: String (250.0)
 geometrie_: String (254.0)
+```
 
 ### Performing projection and transformations with ogr2ogr
+```shell
 $ ogr2ogr spoorwegen.shp -t_srs "EPSG:4326" Top10NL_Spoorwegen.shp<br>
 $ ogrinfo -so spoorwegen.shp spoorwegen<br>
 INFO: Open of `spoorwegen.shp'<br>
@@ -135,22 +138,28 @@ brugnaam: String (250.0)
 tunnelnaam: String (250.0)
 baanvaknaa: String (250.0)
 geometrie_: String (254.0)
+```
 
 ### Converting Shapefiles to GeoJSON with ogr2ogr
+```shell
 $ ogr2ogr -f "GeoJSON" spoorwegen.json spoorwegen.shp
 
 Warning 1: The output driver does not natively support Date type for field eindregist. Misconversion can happen. -mapFieldType can be used to control field type conversion.
+```
 
 Test integrity of the output Spoorwegen.json in geojson.io
 
 I followed the same procedure for the other five shapefiles.
 
 ### Simplify Railways File
+The original railways GeoJSON file was 24 MB. I used mapshaper to simplify the geometry in order to decrease the file size.
+
 After using mapshaper, the railways-simplified.json file was still 16 MB.
-In order to decrease the size further, we removed all the properties except "gml_id". 
+In order to decrease the size further, we removed all the properties except "gml_id".
 ```shell
 >ogr2ogr -f "GeoJSON" -select gml_id data\railways-simplified1.json data\railways-simplified.json
 ```
+This procedure brought the size down to 3 MB, a huge improvement!
 
 ### Courtney's Data Process
 Cincinnati-owned Properties  
